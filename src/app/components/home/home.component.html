@@ -1,0 +1,20 @@
+<div class="mt-5">
+    <h2 class="p-3">Welcome to the Good morning products</h2>
+    <hr />
+    <div class="row mx-auto">
+        <div class="col-md-4" *ngFor="let product of products">
+            <div class="card">
+                <div class="img">
+                    <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
+                    <a [routerLink]="['product',product.id]" (click)="viewProduct($event, product.id)"><i class="fa fa-eye"></i></a>
+                    <!-- <a href=""><i class="fa fa-edit"></i></a> -->
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                    <a [routerLink]="['product',product.id]" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
